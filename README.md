@@ -1,5 +1,6 @@
 # Semgrep Evaluation for SAST of AI-Generated Code
 
+This repository contains a Proof of Concept (PoC) demonstrating the use of Semgrep to identify and remediate security vulnerabilities in AI-generated code. A Python application generated using GitHub Copilot was used as the Application Under Test (AUT).
 ## Objective
 Evaluate Semgrep's effectiveness in identifying vulnerabilities in AI-generated code.
 
@@ -45,3 +46,27 @@ All vulnerabilities were detected, remediated, and validated successfully.
 ## Result
 
 All findings were remediated and validation scans reported zero findings.
+
+## Setup
+
+```bash
+pip install semgrep
+```
+
+## Run Security Audit Scan
+
+```bash
+semgrep --config=p/security-audit ai_generated_auth.py
+```
+
+## Run OWASP Top 10 Scan
+
+```bash
+semgrep --config=p/owasp-top-ten ai_generated_auth.py
+```
+
+## Run Custom Security Rule
+
+```bash
+semgrep --config ai-security.yml ai_generated_auth.py
+```
