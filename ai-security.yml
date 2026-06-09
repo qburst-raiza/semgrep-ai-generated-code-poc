@@ -1,0 +1,15 @@
+rules:
+  - id: hardcoded-secret
+
+    patterns:
+      - pattern-either:
+          - pattern: API_KEY = "..."
+          - pattern: DB_PASSWORD = "..."
+          - pattern: SECRET_TOKEN = "..."
+
+    message: Hardcoded Secret Detected
+
+    severity: ERROR
+
+    languages:
+      - python
